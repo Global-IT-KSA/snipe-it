@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile.alpine
     container_name: snipeit
     ports:
-      - "8400:80"
+      - "8000:80"
     depends_on:
       redis:
         # The default needs to be stated.
@@ -25,7 +25,7 @@ services:
     env_file:
       - .env.dev.docker
     ports:
-      - "3806:3306"
+      - "3306:3306"
     healthcheck:
       # https://mariadb.com/kb/en/using-healthcheck-sh/#compose-file-example
       test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
@@ -40,7 +40,7 @@ services:
     image: mailhog/mailhog:v1.0.1
     ports:
       # - 1025:1025
-      - "8125:8025"
+      - "8025:8025"
 
 volumes:
   mariadb2: {}
