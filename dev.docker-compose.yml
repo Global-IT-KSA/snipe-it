@@ -25,7 +25,7 @@ services:
     env_file:
       - .env.dev.docker
     ports:
-      - "3406:3306"
+      - "3806:3306"
     healthcheck:
       # https://mariadb.com/kb/en/using-healthcheck-sh/#compose-file-example
       test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
