@@ -12,13 +12,13 @@ services:
       redis:
         # The default needs to be stated.
         condition: service_started
-      mariadbst:
+      mariast:
         condition: service_healthy
         restart: true
     env_file:
       - .env.dev.docker
 
-  mariadbst:
+  mariast:
     image: mariadb:11.4.7
     volumes:
       - db:/var/lib/mysql
