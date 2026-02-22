@@ -7,18 +7,18 @@ services:
       dockerfile: Dockerfile.alpine
     container_name: snipeit
     ports:
-      - "8000:80"
+      - "8400:80"
     depends_on:
       redis:
         # The default needs to be stated.
         condition: service_started
-      mariadb:
+      mariadbst:
         condition: service_healthy
         restart: true
     env_file:
       - .env.dev.docker
 
-  mariadb:
+  mariadbst:
     image: mariadb:11.4.7
     volumes:
       - db:/var/lib/mysql
