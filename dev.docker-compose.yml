@@ -21,7 +21,7 @@ services:
   mariast:
     image: mariadb:11.4.7
     volumes:
-      - db:/var/lib/mysql
+      - mariadb:/var/lib/mysql
     env_file:
       - .env.dev.docker
     ports:
